@@ -1,0 +1,265 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: RentApp API
+
+servers:
+- url: https://d5dri15dhbn1elju250u.z7jmlavt.apigw.yandexcloud.net
+paths:
+  /health:
+    get:
+      operationId: health
+      responses:
+        "200":
+          description: OK
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+    options:
+      operationId: healthOptions
+      responses:
+        "200":
+          description: CORS
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        http_headers:
+          Access-Control-Allow-Origin: "*"
+          Access-Control-Allow-Headers: "Content-Type, Authorization"
+          Access-Control-Allow-Methods: "GET,POST,PUT,DELETE,OPTIONS"
+        content:
+          "application/json": "{}"
+
+  /properties:
+    get:
+      operationId: propertiesList
+      responses:
+        "200": { description: OK }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+    post:
+      operationId: propertiesCreate
+      responses:
+        "201": { description: Created }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+    options:
+      operationId: propertiesOptions
+      responses:
+        "200": { description: CORS }
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        http_headers:
+          Access-Control-Allow-Origin: "*"
+          Access-Control-Allow-Headers: "Content-Type, Authorization"
+          Access-Control-Allow-Methods: "GET,POST,PUT,DELETE,OPTIONS"
+        content:
+          "application/json": "{}"
+
+  /properties/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+
+    get:
+      operationId: propertiesGet
+      responses:
+        "200": { description: OK }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+        query_params:
+          id: "{id}"
+
+    put:
+      operationId: propertiesUpdate
+      responses:
+        "200": { description: OK }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+        query_params:
+          id: "{id}"
+
+    delete:
+      operationId: propertiesDelete
+      responses:
+        "200": { description: OK }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+        query_params:
+          id: "{id}"
+
+    options:
+      operationId: propertiesIdOptions
+      responses:
+        "200": { description: CORS }
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        http_headers:
+          Access-Control-Allow-Origin: "*"
+          Access-Control-Allow-Headers: "Content-Type, Authorization"
+          Access-Control-Allow-Methods: "GET,POST,PUT,DELETE,OPTIONS"
+        content:
+          "application/json": "{}"
+
+  /tenants:
+    get:
+      operationId: tenantsList
+      responses:
+        "200": { description: OK }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+    post:
+      operationId: tenantsCreate
+      responses:
+        "201": { description: Created }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+    options:
+      operationId: tenantsOptions
+      responses:
+        "200": { description: CORS }
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        http_headers:
+          Access-Control-Allow-Origin: "*"
+          Access-Control-Allow-Headers: "Content-Type, Authorization"
+          Access-Control-Allow-Methods: "GET,POST,PUT,DELETE,OPTIONS"
+        content:
+          "application/json": "{}"
+
+  /tenants/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+
+    get:
+      operationId: tenantsGet
+      responses:
+        "200": { description: OK }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+        query_params:
+          id: "{id}"
+
+    put:
+      operationId: tenantsUpdate
+      responses:
+        "200": { description: OK }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+        query_params:
+          id: "{id}"
+
+    delete:
+      operationId: tenantsDelete
+      responses:
+        "200": { description: OK }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+        query_params:
+          id: "{id}"
+
+    options:
+      operationId: tenantsIdOptions
+      responses:
+        "200": { description: CORS }
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        http_headers:
+          Access-Control-Allow-Origin: "*"
+          Access-Control-Allow-Headers: "Content-Type, Authorization"
+          Access-Control-Allow-Methods: "GET,POST,PUT,DELETE,OPTIONS"
+        content:
+          "application/json": "{}"
+
+  /leases:
+    get:
+      operationId: leasesList
+      responses:
+        "200": { description: OK }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+    post:
+      operationId: leasesCreate
+      responses:
+        "201": { description: Created }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+    options:
+      operationId: leasesOptions
+      responses:
+        "200": { description: CORS }
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        http_headers:
+          Access-Control-Allow-Origin: "*"
+          Access-Control-Allow-Headers: "Content-Type, Authorization"
+          Access-Control-Allow-Methods: "GET,POST,PUT,DELETE,OPTIONS"
+        content:
+          "application/json": "{}"
+
+  /leases/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: { type: string }
+
+    delete:
+      operationId: leasesDelete
+      responses:
+        "200": { description: OK }
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: d4ektbq65p2u0ebe2s9e
+        service_account_id: ajev9uv6q8a58vrcrjak
+        query_params:
+          id: "{id}"
+
+    options:
+      operationId: leasesIdOptions
+      responses:
+        "200": { description: CORS }
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        http_headers:
+          Access-Control-Allow-Origin: "*"
+          Access-Control-Allow-Headers: "Content-Type, Authorization"
+          Access-Control-Allow-Methods: "GET,POST,PUT,DELETE,OPTIONS"
+        content:
+          "application/json": "{}"

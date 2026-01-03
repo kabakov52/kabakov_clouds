@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css?v=1">
+  <title>RentApp — арендодатель</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 24px; }
+    .row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; min-width: 320px; }
+    input, select, button { padding: 8px; margin: 6px 0; width: 100%; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border-bottom: 1px solid #eee; padding: 8px; text-align: left; }
+    .muted { color: #666; font-size: 12px; }
+    .tabs button { width: auto; margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <h1>RentApp</h1>
+
+  <div class="card">
+    <label>API base URL (домен API Gateway)</label>
+    <input id="apiBase" placeholder="например https://d5....apigw.yandexcloud.net" />
+    <button onclick="saveApiBase()">Сохранить</button>
+    <div class="muted">Хранится в localStorage браузера.</div>
+  </div>
+
+  <div class="tabs" style="margin: 16px 0;">
+    <button onclick="setTab('properties')">Объекты</button>
+    <button onclick="setTab('tenants')">Жильцы</button>
+    <button onclick="setTab('leases')">Заселения</button>
+    <button onclick="refresh()">Обновить</button>
+  </div>
+
+  <div id="root" class="row"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
